@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="FetchTask" extends="Task">
+    <script type="text/brightscript" uri="pkg:/components/FetchTask.brs" />
+    <interface>
+        <field id="requestUrl" type="string" />
+        <field id="queryValue" type="string" />
+        <field id="responseJson" type="assocarray" />
+        <field id="statusCode" type="integer" />
+        <field id="responseText" type="string" />
+        <field id="errorMessage" type="string" />
+        <field id="requestTimeoutSeconds" type="integer" />
+    </interface>
+</component>

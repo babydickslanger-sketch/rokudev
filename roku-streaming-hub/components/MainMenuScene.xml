@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainMenuScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainMenuScene.brs" />
+    
+    <children>
+        <!-- Background -->
+        <Rectangle 
+            id="background" 
+            width="1920" 
+            height="1080" 
+            color="0x000000" />
+        
+        <!-- Main Menu Group -->
+        <Group id="menuGroup">
+            <!-- Header -->
+            <Label 
+                id="appTitle" 
+                text="MantisTV" 
+                font="font:LargeBoldSystemFont" 
+                color="0xFFFFFF" 
+                translation="[960, 100]" 
+                horizAlign="center" />
+            
+            <!-- Subtitle -->
+            <Label 
+                id="subtitle" 
+                text="Select a streaming service" 
+                font="font:MediumSystemFont" 
+                color="0xAAAAAA" 
+                translation="[960, 160]" 
+                horizAlign="center" />
+            
+            <!-- App Selection Grid -->
+            <PosterGrid 
+                id="appGrid" 
+                basePosterSize="[400, 300]" 
+                itemSpacing="[100, 100]" 
+                translation="[260, 250]" />
+        </Group>
+        
+        <!-- Subview Container -->
+        <Group id="viewContainer" />
+        
+        <!-- Loading Indicator -->
+        <Label 
+            id="loadingLabel" 
+            text="Loading..." 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[960, 540]" 
+            horizAlign="center" 
+            vertAlign="center" 
+            visible="false" />
+    </children>
+</component>

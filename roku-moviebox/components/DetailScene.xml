@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="DetailScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/DetailScene.brs" />
+    
+    <children>
+        <!-- Background -->
+        <Rectangle 
+            id="background" 
+            width="1920" 
+            height="1080" 
+            color="0x000000" />
+        
+        <!-- Back Button -->
+        <Label 
+            id="backButton" 
+            text="&lt; Back" 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[80, 50]" />
+        
+        <!-- Series Title -->
+        <Label 
+            id="seriesTitle" 
+            text="" 
+            font="font:LargeBoldSystemFont" 
+            color="0xFFFFFF" 
+            translation="[80, 120]" />
+        
+        <!-- Season List -->
+        <RowList 
+            id="seasonList" 
+            itemSize="[200, 60]" 
+            itemComponentName="SeasonItem" 
+            numRows="1" 
+            translation="[80, 200]" 
+            numColumns="6" />
+        
+        <!-- Episode List -->
+        <PosterGrid 
+            id="episodeGrid" 
+            basePosterSize="[200, 150]" 
+            itemSpacing="[20, 20]" 
+            translation="[80, 300]" 
+            visible="false" />
+        
+        <!-- Video Player -->
+        <Video 
+            id="videoPlayer" 
+            visible="false" 
+            width="1280" 
+            height="720" 
+            translation="[320, 180]" />
+        
+        <!-- Loading Indicator -->
+        <Label 
+            id="loadingLabel" 
+            text="Loading..." 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[960, 540]" 
+            horizAlign="center" 
+            vertAlign="center" 
+            visible="false" />
+    </children>
+</component>

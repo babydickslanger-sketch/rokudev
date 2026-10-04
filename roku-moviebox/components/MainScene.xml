@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    
+    <children>
+        <!-- Background -->
+        <Rectangle 
+            id="background" 
+            width="1920" 
+            height="1080" 
+            color="0x000000" />
+        
+        <!-- Header -->
+        <Label 
+            id="appTitle" 
+            text="MovieBox" 
+            font="font:LargeBoldSystemFont" 
+            color="0xFFFFFF" 
+            translation="[80, 50]" />
+        
+        <!-- Category List -->
+        <RowList 
+            id="categoryList" 
+            itemSize="[400, 80]" 
+            itemComponentName="CategoryItem" 
+            numRows="1" 
+            translation="[80, 120]" 
+            numColumns="4" />
+        
+        <!-- Content Grid -->
+        <PosterGrid 
+            id="mediaGrid" 
+            basePosterSize="[300, 200]" 
+            itemSpacing="[20, 20]" 
+            translation="[80, 220]" 
+            visible="false" />
+        
+        <!-- Video Player -->
+        <Video 
+            id="videoPlayer" 
+            visible="false" 
+            width="1280" 
+            height="720" 
+            translation="[320, 180]" />
+        
+        <!-- Loading Indicator -->
+        <Label 
+            id="loadingLabel" 
+            text="Loading..." 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[960, 540]" 
+            horizAlign="center" 
+            vertAlign="center" 
+            visible="false" />
+    </children>
+</component>

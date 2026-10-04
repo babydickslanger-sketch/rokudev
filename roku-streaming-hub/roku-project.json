@@ -1,0 +1,21 @@
+{
+  "source_dir": "source",
+  "brs_files": [
+    "source/main.brs"
+  ],
+  "components": [
+    "components/MainMenuScene",
+    "components/FamelackScene",
+    "components/MovieBoxScene",
+    "components/FetchTask",
+    "components/FamelackTabItem",
+    "components/MovieBoxCategoryItem"
+  ],
+  "manifest": "manifest",
+  "build_targets": [
+    {
+      "name": "roku-streaming-hub",
+      "out_file": "roku-streaming-hub.zip"
+    }
+  ]
+}

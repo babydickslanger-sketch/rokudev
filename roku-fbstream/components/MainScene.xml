@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    <children>
+        <Rectangle id="background" width="1920" height="1080" color="0x000000" />
+        <Label id="appTitle" text="FBStream Sports" font="font:LargeBoldSystemFont" color="0xFFFFFF" translation="[80, 50]" />
+        <RowList id="categoryList" itemSize="[380, 80]" itemComponentName="FBStreamCategoryItem" numRows="1" translation="[80, 120]" numColumns="4" />
+        <PosterGrid id="mediaGrid" basePosterSize="[280, 350]" itemSpacing="[30, 30]" translation="[160, 220]" visible="false" numColumns="5" caption1NumLines="2" />
+        <Video id="videoPlayer" visible="false" width="1280" height="720" translation="[320, 180]" />
+        <Label id="loadingLabel" text="Loading..." font="font:MediumSystemFont" color="0xFFFFFF" translation="[960, 540]" horizAlign="center" vertAlign="center" visible="false" />
+    </children>
+</component>

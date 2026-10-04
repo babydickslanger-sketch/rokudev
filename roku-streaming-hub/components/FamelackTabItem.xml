@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="FamelackTabItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/FamelackTabItem.brs" />
+    <interface>
+        <field id="itemContent" type="node" onChange="showContent" />
+    </interface>
+    <children>
+        <Rectangle 
+            id="tabBackground" 
+            width="280" 
+            height="60" 
+            color="0x333333" />
+        <Label 
+            id="tabLabel" 
+            text="" 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[140, 30]" 
+            horizAlign="center" 
+            vertAlign="center" />
+    </children>
+</component>

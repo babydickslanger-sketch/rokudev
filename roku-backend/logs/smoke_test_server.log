@@ -1,0 +1,51 @@
+INFO:     Started server process [43732]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8011 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55861 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55866 - "GET /health HTTP/1.1" 200 OK
+2026-10-04 06:59:09,773 INFO [__main__] FBStream catalog request category=live-now
+2026-10-04 06:59:11,302 INFO [__main__] FBStream catalog response category=live-now items=22
+INFO:     127.0.0.1:55867 - "GET /api/fbstream/catalog?category=live-now HTTP/1.1" 200 OK
+2026-10-04 06:59:11,327 INFO [__main__] FBStream stream request client=127.0.0.1 url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying
+2026-10-04 06:59:11,328 INFO [scrapers.fbstream_scraper] Resolving FBStream event url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying
+2026-10-04 06:59:11,328 INFO [scrapers.fbstream_scraper] Trying streamlink for url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying
+2026-10-04 06:59:13,503 WARNING [scrapers.fbstream_scraper] Streamlink extraction failed url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying error=Streamlink doesn't support this URL directly: 
+2026-10-04 06:59:14,508 INFO [scrapers.fbstream_scraper] Loaded FBStream event page url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying final_url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying status=200
+2026-10-04 06:59:14,517 INFO [scrapers.fbstream_scraper] FBStream embed candidates count=0 preferred=None embeds=[]
+2026-10-04 06:59:14,518 INFO [scrapers.fbstream_scraper] Falling back to Playwright for url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying embed=None
+2026-10-04 07:01:14,730 WARNING [scrapers.fbstream_scraper] Playwright fallback failed url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying error=Playwright worker timed out after 120s; stderr tail: worker starting event_url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying embed_url=None
+event page loaded url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying frames=1
+event page click wait_ms=8000 candidates=0 frames=1
+event page click wait_ms=10000 candidates=0 frames=1
+
+2026-10-04 07:01:14,730 ERROR [scrapers.fbstream_scraper] FBStream resolution failed url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying detail=No direct HLS/MP4 source or supported external player was found; extraction failures: playwright: Playwright worker timed out after 120s; stderr tail: worker starting event_url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying embed_url=None
+event page loaded url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying frames=1
+event page click wait_ms=8000 candidates=0 frames=1
+event page click wait_ms=10000 candidates=0 frames=1
+
+2026-10-04 07:01:14,731 ERROR [__main__] FBStream stream resolution failed client=127.0.0.1 url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying
+Traceback (most recent call last):
+  File "D:\roku-apps\roku-backend\main.py", line 150, in fbstream_stream
+    stream_info = await run_in_threadpool(get_fbstream_stream, url)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\roku-apps\roku-backend\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\roku-apps\roku-backend\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\roku-apps\roku-backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\roku-apps\roku-backend\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\roku-apps\roku-backend\scrapers\fbstream_scraper.py", line 248, in get_fbstream_stream
+    raise RuntimeError(detail)
+RuntimeError: No direct HLS/MP4 source or supported external player was found; extraction failures: playwright: Playwright worker timed out after 120s; stderr tail: worker starting event_url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying embed_url=None
+event page loaded url=https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-qualifying frames=1
+event page click wait_ms=8000 candidates=0 frames=1
+event page click wait_ms=10000 candidates=0 frames=1
+
+INFO:     127.0.0.1:57534 - "GET /api/fbstream/stream?url=https%3A%2F%2Ffbstream.is%2Flive%2Fstream%2Ffia-formula-1-2026-bahrain-f1gp-qualifying HTTP/1.1" 500 Internal Server Error

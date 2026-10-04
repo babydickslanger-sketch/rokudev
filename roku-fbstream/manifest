@@ -1,0 +1,10 @@
+title=FBStream Sports
+major_version=1
+minor_version=0
+build_version=0
+ui_resolutions=hd
+mm_icon_focus_hd=pkg:/images/FBStream.png
+mm_icon_focus_fhd=pkg:/images/FBStream.png
+splash_screen_hd=pkg:/images/FBStream.png
+splash_screen_fhd=pkg:/images/FBStream.png
+network_requests=*

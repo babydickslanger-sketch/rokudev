@@ -1,0 +1,9 @@
+title=MovieBox Stream Hub
+major_version=1
+minor_version=0
+build_version=0
+ui_resolutions=hd
+mm_icon_focus_hd=pkg:/images/MovieBox.png
+mm_icon_focus_fhd=pkg:/images/MovieBox.png
+splash_screen_hd=pkg:/images/MovieBox.png
+splash_screen_fhd=pkg:/images/MovieBox.png

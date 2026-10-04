@@ -1,0 +1,122 @@
+Capturing Roku logs from 192.168.1.102:8085 at 2026-10-04T04:40:22.5029639-05:00
+10-04 09:35:10.168 sdkl [beacon.signal] |AppLaunchChainComplete ----> Duration(1095 ms)
+FBStream loading category: live-now
+FBStream Init complete - auto-loading live-now
+FBStream FetchTask GET: http://192.168.1.46:8000/api/fbstream/catalog?category=live-now
+FBStream FetchTask timed out after  10 seconds: http://192.168.1.46:8000/api/fbstream/catalog?category=live-now
+FBStream onCatalogLoaded - statusCode= 0
+FBStream onCatalogLoaded - errorMessage=Timed out waiting for HTTP response
+FBStream onCatalogLoaded - responseJson valid=true
+FBStream catalog.categories is invalid - response structure mismatch
+
+BrightScript Micro Debugger.
+Enter any BrightScript statement, debug commands, or HELP.
+
+Suspending threads...
+Thread selected:  1*   pkg:/components/MainScene.brs(81)              print "FBStream catalog keys: " + catalog.Keys().GetStr()
+
+Current Function:
+073:      if catalog = invalid
+074:          print "FBStream catalog is invalid - JSON parse failed or network error"
+075:          showEmptyState("Error: " + m.task.errorMessage + " (HTTP " + stri(m.task.statusCode) + ")")
+076:          return
+077:      end if
+078:      categories = catalog["categories"]
+079:      if categories = invalid
+080:          print "FBStream catalog.categories is invalid - response structure mismatch"
+081:*         print "FBStream catalog keys: " + catalog.Keys().GetStr()
+082:          showEmptyState("Error: Invalid response structure from backend")
+083:          return
+084:      end if
+085:      if categories.Count() = 0
+Source Digest(s): 
+pkg:    dev 1.0.0 995dad08 FBStream Sports
+pkg: 632126 1.1.5 ea75e661 libplayready
+
+Member function not found in BrightScript Component or interface. (runtime error &hf4) in pkg:/components/MainScene.brs(81)
+Backtrace:
+#0  Function oncatalogloaded() As Void
+   file/line: pkg:/components/MainScene.brs(81)
+Local Variables:
+global           Interface:ifGlobal
+m                roAssociativeArray refcnt=2 count:8
+catalog          roAssociativeArray refcnt=1 count:0
+categories       Invalid
+content          <uninitialized>
+eventcount       <uninitialized>
+category         <uninitialized>
+categorycount    <uninitialized>
+items            <uninitialized>
+event            <uninitialized>
+node             <uninitialized>
+posterurl        <uninitialized>
+nodecount        <uninitialized>
+Threads:
+ID    Location                                Source Code
+ 0    pkg:/source/main.brs(9)                        message = wait(0, port)
+ 1*   pkg:/components/MainScene.brs(81)              print "FBStream catalog keys: " + catalog.Keys().GetStr()
+ 2[u] pkg:/components/FetchTask.brs(5)        subexecuteRequest()
+  *selected   [u]unattached(not debuggable)
+
+Brightscript Debugger> 
+Thread detached
+
+Thread detached
+10-04 09:42:31.582 app  [scrpt.ctx.run.exit] UI: Exiting 'FBStream Sports', id 'dev', EXIT_BRIGHTSCRIPT_UNK_FUNC, thrd 19904
+10-04 09:42:31.633 app  [beacon.signal] |AppExitComplete -----------> Duration(934 ms)
+10-04 09:42:31.633 app  [beacon.header] __________________________________________
+10-04 09:42:31.633 app  [beacon.report] |AppLaunchInitiate ---------> TimeBase(0 ms), InstantOn
+10-04 09:42:31.633 app  [beacon.report] |AppLaunchComplete ---------> Pended without Render
+10-04 09:42:31.633 app  [beacon.report] |AppSplashInitiate ---------> TimeBase(24 ms)
+10-04 09:42:31.634 app  [beacon.report] |AppSplashComplete ---------> Duration(178 ms)
+10-04 09:42:31.634 app  [beacon.report] |AppExitInitiate -----------> TimeBase(441807 ms)
+10-04 09:42:31.634 app  [beacon.report] |AppExitComplete -----------> Duration(934 ms)
+10-04 09:42:31.634 app  [beacon.report] |AppLaunchChainInitiate ----> TimeBase(NotApplicable)
+10-04 09:42:31.634 app  [beacon.footer] __________________________________________
+10-04 09:43:16.888 app  [beacon.signal] |AppLaunchInitiate ---------> TimeBase(0 ms)
+10-04 09:43:16.903 app  [beacon.signal] |AppCompileInitiate --------> TimeBase(16 ms)
+10-04 09:43:16.905 app  [scrpt.cmpl] Compiling 'FBStream Sports', id 'dev'
+10-04 09:43:16.910 app  [scrpt.load.mkup] Loading markup dev 'FBStream Sports'
+10-04 09:43:16.911 app  [scrpt.unload.mkup] Unloading markup dev 'FBStream Sports'
+10-04 09:43:16.913 app  [scrpt.parse.mkup.time] Parsed markup dev 'FBStream Sports' in 3 milliseconds
+
+------ Compiling dev 'FBStream Sports' ------
+10-04 09:43:16.915 app  [scrpt.ctx.app.skip] 'dev' v1.0.0: UI entry point found in source/main.brs - compiling nothing else for 'FBStream Sports'
+BRIGHTSCRIPT: WARNING: unused variable 'scene' in function 'main' in pkg:/source/main.brs(1)
+Displayed 1 of 1 warnings
+10-04 09:43:16.916 app  [scrpt.ctx.cmpl.time] Compiled 'FBStream Sports', id 'dev' in 2 ms (BCVer:0), thrd 2242
+10-04 09:43:16.917 app  [scrpt.proc.mkup.time] Processed markup dev 'FBStream Sports' in 0 milliseconds
+10-04 09:43:16.970 app  [beacon.signal] |AppCompileComplete --------> Duration(67 ms)
+10-04 09:43:17.022 app  [beacon.signal] |AppLaunchInitiate ---------> TimeBase(0 ms)
+10-04 09:43:17.022 app  [beacon.signal] |AppLaunchChainInitiate ----> TimeBase(NotApplicable)
+10-04 09:43:17.035 app  [beacon.signal] |AppSplashInitiate ---------> TimeBase(13 ms)
+10-04 09:43:17.073 app  [scrpt.ctx.run.enter] UI: Entering 'FBStream Sports', id 'dev', thrd 28081
+10-04 09:43:17.214 app  [beacon.signal] |AppSplashComplete ---------> Duration(178 ms)
+10-04 09:43:18.018 sdkl [beacon.signal] |AppLaunchInitiate ---------> TimeBase(0 ms)
+10-04 09:43:18.051 sdkl [scrpt.cmpl] Compiling 'FBStream Sports', id 'dev'
+10-04 09:43:18.064 sdkl [scrpt.load.mkup] Loading markup dev 'FBStream Sports'
+10-04 09:43:18.065 sdkl [scrpt.unload.mkup] Unloading markup dev 'FBStream Sports'
+10-04 09:43:18.070 sdkl [scrpt.parse.mkup.time] Parsed markup dev 'FBStream Sports' in 6 milliseconds
+
+------ Compiling dev 'FBStream Sports' ------
+BRIGHTSCRIPT: WARNING: unused variable 'scene' in function 'main' in pkg:/source/main.brs(1)
+Displayed 1 of 1 warnings
+10-04 09:43:18.089 sdkl [scrpt.ctx.cmpl.time] Compiled 'FBStream Sports', id 'dev' in 16 ms (BCVer:0), thrd 28183
+10-04 09:43:18.090 sdkl [scrpt.proc.mkup.time] Processed markup dev 'FBStream Sports' in 0 milliseconds
+10-04 09:43:18.093 sdkl [beacon.signal] |AppCompileComplete --------> Duration(75 ms)
+
+------ Running dev 'FBStream Sports' main ------
+10-04 09:43:18.241 sdkl [beacon.signal] |AppLaunchChainComplete ----> Duration(1048 ms)
+FBStream loading category: live-now
+FBStream Init complete - auto-loading live-now
+FBStream FetchTask GET: http://192.168.1.46:8000/api/fbstream/catalog?category=live-now
+FBStream FetchTask HTTP status:  200; timeoutSeconds= 10
+FBStream FetchTask response length:  2280
+FBStream FetchTask response (first 500 chars): {"category":"live-now","categories":[{"title":"Live Now","slug":"live-now","items":[{"id":"fia-formula-1-2026-bahrain-f1gp-pre-race","title":"06:30 FIA Formula 1 2026: Bahrain F1GP Pre Race","hdPosterUrl":"","description":"Live sports event","targetUrl":"https://fbstream.is/live/stream/fia-formula-1-2026-bahrain-f1gp-pre-race"},{"id":"shenzhen-open-snooker","title":"07:00 Shenzhen Open Snooker","hdPosterUrl":"","description":"Live sports event","targetUrl":"https://fbstream.is/live/stream/shenzh
+FBStream onCatalogLoaded - statusCode= 200
+FBStream onCatalogLoaded - errorMessage=
+FBStream onCatalogLoaded - responseJson valid=true
+FBStream category 'Live Now' events= 9
+FBStream catalog mapped events= 9; grid nodes= 9
+FBStream event grid visible=true
+FBStream FetchTask JSON parse successful

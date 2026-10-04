@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CategoryItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/CategoryItem.brs" />
+    <interface>
+        <field id="itemContent" type="node" onChange="showContent" />
+    </interface>
+    <children>
+        <Rectangle 
+            id="categoryBackground" 
+            width="380" 
+            height="60" 
+            color="0x333333" />
+        <Label 
+            id="categoryLabel" 
+            text="" 
+            font="font:MediumSystemFont" 
+            color="0xFFFFFF" 
+            translation="[190, 30]" 
+            horizAlign="center" 
+            vertAlign="center" />
+    </children>
+</component>
